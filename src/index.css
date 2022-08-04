@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#root {
+  background-color: white;
+}
+
+ .overlay {
+  position: fixed;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 50;
+  left: 500;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+.App {
+  width:500px;
+ height: fit-content;
+  top: 100;
+  left: 50;
+  right: 0;
+  bottom: 0;
+  border: 2.5px solid black;
+  background-color: beige;
+  position: relative;
+  text-align: center;
+  margin-top: 200px;
+  margin-left: 500px;
+  padding: 30px;  
+}
+
+.kanbanBoard {
+  text-align: center;
+}
+
+.addLane {
+  display: inline-flex;
+  position: absolute;
+  padding: 20px;
+}
+
+.addLaneButton {
+  width: 200px;
+  height: 25px;
+}
+
+.viewTableStyle {
+  width:100%;
+  padding:0px 150px 20px 150px 
+}
+
+.modalRowData {
+  display:flex;
+  padding-top: 20px;
+  justify-content:space-between
+} 
+
+.closeButton {
+  width: 100px;
+}
+
+.cardTableStyle {
+  padding: 20px;
+  width: 100%;
+}
+.cardTable {
+  padding: 20px;
+  font-weight: bold;
+}
+
+.cardModalFooter {
+  justify-content: flex-end;
+  display: flex;
+  padding-top: 35px 
+}
+
+.laneTableStyle {
+  width:100%;
+  padding:0px 50px
+}
+
+.laneTAbleData {
+  display: flex;
+  justify-content: space-between;
+}
+

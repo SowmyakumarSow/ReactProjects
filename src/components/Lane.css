@@ -1,0 +1,34 @@
+.lane {
+    box-shadow: none !important;
+    width: fit-content;
+    height: fit-content;
+    display: inline-grid;
+    padding: 20px;
+    border: 5px ridge;
+    margin: 20px;
+    background-color: antiquewhite;
+}
+
+.lanedata {
+    align-items: center;
+}
+
+.laneItem {
+    padding-bottom: 5px;
+}
+.laneTitle{
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.laneTitleBar {
+    width: 50%;
+}
+
+
+.deleteLaneButton {
+    margin-left: 30px;
+    margin-right: 10px;
+}

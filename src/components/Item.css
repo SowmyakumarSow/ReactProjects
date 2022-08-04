@@ -1,0 +1,51 @@
+
+.item {
+  box-shadow: none !important;
+  width: 200px !important;
+  height: fit-content;
+  margin-bottom: 10px;
+  width:100%;  
+  text-align:center;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  background-color: white
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  background-color: burlywood;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.discription {
+ width: inherit; 
+ padding-top: 10px;
+ word-wrap: break-word;
+ margin-bottom: 10px;
+ padding-bottom: 10px;
+}
+
+.deleteItemButton {
+  border: none;
+}
+
+.itemFooter {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  padding-top: 30px;
+}
+
+.assignee {
+  border-radius: 200px;
+  background-color: lightcoral;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+
+.viewButton {
+  text-decoration: underline;
+}
