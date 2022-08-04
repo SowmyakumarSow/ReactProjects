@@ -1,5 +1,5 @@
 
-.item {
+.bug_item {
   box-shadow: none !important;
   width: 200px !important;
   height: fit-content;
@@ -8,13 +8,45 @@
   text-align:center;
   word-wrap: break-word;
   flex-wrap: wrap;
-  background-color: white
+  background-color: darkorange;
+  border-radius: 28px;
+  padding: 10px;
+  color: white;
+}
+
+.feature_item {
+  box-shadow: none !important;
+  width: 200px !important;
+  height: fit-content;
+  margin-bottom: 10px;
+  width:100%;  
+  text-align:center;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  background-color: darkcyan;
+  border-radius: 28px;
+  padding: 10px;
+  color: white;
+}
+
+.request_item {
+  box-shadow: none !important;
+  width: 200px !important;
+  height: fit-content;
+  margin-bottom: 10px;
+  width:100%;  
+  text-align:center;
+  word-wrap: break-word;
+  flex-wrap: wrap;
+  background-color: cornflowerblue;
+  border-radius: 28px;
+  padding: 10px;
+  color: white;
 }
 
 .title {
   display: flex;
   justify-content: space-between;
-  background-color: burlywood;
   font-weight: bold;
   padding: 10px;
 }
@@ -29,6 +61,8 @@
 
 .deleteItemButton {
   border: none;
+  background-color: initial;
+  color: white;
 }
 
 .itemFooter {
@@ -40,7 +74,7 @@
 
 .assignee {
   border-radius: 200px;
-  background-color: lightcoral;
+  background-color: brown;
   width: 25px;
   height: 25px;
   margin-left: 10px;
@@ -48,4 +82,15 @@
 
 .viewButton {
   text-decoration: underline;
+}
+
+.itemTitle{
+  text-overflow: ellipsis;
+    /* display: flex; */
+    width: 184px;
+    overflow: hidden;
+    white-space: nowrap;
+    /* width: 50px; */
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

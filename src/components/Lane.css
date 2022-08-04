@@ -21,6 +21,9 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  border-bottom: 5px ridge;
+  margin-bottom: 30px;
+
 }
 
 .laneTitleBar {
