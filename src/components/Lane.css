@@ -35,3 +35,9 @@
     margin-left: 30px;
     margin-right: 10px;
 }
+
+.addButton {
+    margin-right: 10px;
+    width: 100px;
+    background-color:darkgoldenrod;
+}

@@ -1,5 +1,6 @@
 import React , {useState} from "react";
 import ReactDOM from "react-dom";
+import { get } from "lodash"
 import "../index.css"
 
 
@@ -21,7 +22,7 @@ export default function KandanModal(props) {
     const [cardhrs, setCardhrs] = useState("");
     const [cardPriority, setCardPriority] = useState("");
 
-    const handleChange = (event) => setCardType(event.target.value)
+    const handleChange = (event) => setCardType(get(event,"target.value"))
 
     const handleAddButtonClick = (value) => {
         if (cardType){
@@ -90,22 +91,22 @@ export default function KandanModal(props) {
 
 <tr className="modalRowData">
 <td>{formTitle}</td>
-<td><input type="text" onChange={(e)=>setValue(e.target.value)}/></td>
+<td><input type="text" onChange={(e)=>setValue(get(e,"target.value"))}/></td>
 </tr>
 
 <tr className="modalRowData">
 <td>{"Priority"}</td>
-<td><input type="text" onChange={(e)=>setCardPriority(e.target.value)}/></td>
+<td><input type="text" onChange={(e)=>setCardPriority(get(e,"target.value"))}/></td>
 </tr>
 
 <tr className="modalRowData">
 <td>{"Estimated Time"}</td>
-<td><input type="text" onChange={(e)=>setCardhrs(e.target.value)}/></td>
+<td><input type="text" onChange={(e)=>setCardhrs(get(e,"target.value"))}/></td>
 </tr>
 
 <tr className="modalRowData">
 <td>{"Assignee"}</td>
-<td><input type="text" onChange={(e)=>setCardAssignee(e.target.value)}/></td>
+<td><input type="text" onChange={(e)=>setCardAssignee(get(e,"target.value"))}/></td>
 </tr>
 </tbody>
 </table>
@@ -121,12 +122,12 @@ export default function KandanModal(props) {
             <table className="laneTableStyle"><tbody>
           <tr className="laneTAbleData">
              <td>{formTitle}</td>
-             <td><input type="text" onChange={(e)=>setValue(e.target.value)}/></td>
+             <td><input type="text" onChange={(e)=>setValue(get(e,"target.value"))}/></td>
           </tr>
           </tbody>
          </table>
          <div className="cardModalFooter">
-            <button disabled={!value} onClick={()=>handleAddButtonClick(value)} style={{marginRight: "10px",width:"100px", backgroundColor:"darkgoldenrod"}}>Add</button>
+            <button className="addButton" disabled={!value} onClick={()=>handleAddButtonClick(value)}>Add</button>
             <button className="closeButton" onClick={()=>setIsModalOpen(false)}>Close</button>  
           </div>
        </div>
