@@ -3,6 +3,7 @@ import Item from "./Item";
 import { useDispatch } from 'react-redux'
 import { deleteLane, addItem } from '../reducers'
 import KandanModal from "./KandanModal";
+import { get } from "lodash"
 import "./Lane.css"
 
 function Lane(props){
@@ -27,19 +28,19 @@ function Lane(props){
    
    }
 
- const displayRemoveLane = (!laneData.items || laneData.items.length===0);
+ const displayRemoveLane = (!get(laneData,"items") || get(laneData,"items.length")===0);
     return (
-    <div className="lane">
-      <div className="laneTitle">
-        <div className="laneTitleBar">{laneData.laneTitle} {laneData.items.length>0 ? (`(${laneData.items.length})`) : " "}</div>
+    <div data-testId="lane" className="lane">
+      <div data-testId="laneTitle" className="laneTitle">
+        <div className="laneTitleBar">{get(laneData,"laneTitle")} {get(laneData,"items.length")>0 ? (`(${get(laneData,"items.length")})`) : " "}</div>
         <div>
         {displayRemoveLane && (
         <button className="deleteLaneButton" onClick={()=>ondeleteLane(laneName)}>X</button>)}
         <div style={{fontWeight: "400" ,paddingTop: displayRemoveLane?"30px": "0px"}}onClick={()=>setIsModalOpen(true)}>Add card</div>
         </div>
       </div>
-      <div className="lanedata">
-        {laneData.items.map((item, index)=>
+      <div data-testId="lanedata" className="lanedata">
+        {get(laneData,"items") && laneData.items.map((item, index)=>
           <div className="laneItem"><Item item={item} index={index} laneName={laneName} kanbanBoard={kanbanBoard}/></div>
         )}
       </div>

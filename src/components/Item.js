@@ -1,14 +1,13 @@
 import React, {useState, useRef} from "react"
 import { useDispatch } from "react-redux";
 import { deleteItem } from "../reducers"
+import { get } from "lodash"
 import KandanModal from "./KandanModal";
 import './Item.css'
 function Item(props) {
     const {item, laneName, index}= props;
     let { kanbanBoard } = props;
     const [isModalOpen, setIsModalOpen]=useState(false);
-   
-    const {title,assignee, type}=item;
     const dispatch = useDispatch();
 
     const onDeleteItem=(index, lane)=> {
@@ -19,21 +18,21 @@ function Item(props) {
         localStorage.setItem("kanban", `${btoa(JSON.stringify(kanbanBoard))}`);
     }
 
-    const titleClass = `${type.toLowerCase()}_item`
-    const assigneeLetter = assignee[0].toUpperCase();
+    const titleClass = `${get(item,"type","").toLowerCase()}_item`
+    const assigneeLetter = get(item,"assignee[0]","").toUpperCase();
    return (
     <div 
     className={titleClass} 
  >
        <div className="title">
-        {item.type} 
-        <button className="deleteItemButton" onClick={()=>onDeleteItem(index, laneName)}>X</button>
+        {get(item,"type")} 
+        <button data-testId="deleteItemButton" className="deleteItemButton" onClick={()=>onDeleteItem(index, laneName)}>X</button>
        </div>
-       <div className="discription">
-        <div className="itemTitle">{title}</div>
-        <div className="itemFooter">
-    <div className="assignee">{assigneeLetter}</div>
-        <div className="viewButton" onClick={(e)=>{e.preventDefault();setIsModalOpen(true)}}>View</div></div>
+       <div data-testId="discription" className="discription">
+        <div data-testId="itemTitle"  className="itemTitle">{get(item,"title")}</div>
+        <div data-testId="itemFooter" className="itemFooter">
+    <div data-testId="assignee" className="assignee">{assigneeLetter}</div>
+        <div data-testId="viewButton" className="viewButton" onClick={(e)=>{e.preventDefault();setIsModalOpen(true)}}>View</div></div>
         </div>
         
   {isModalOpen && <KandanModal card={item} title={"view"} setIsModalOpen={setIsModalOpen}/>}
